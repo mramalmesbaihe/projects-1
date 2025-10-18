@@ -1,0 +1,282 @@
+/* إعدادات أساسية */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color:#DFCCFB;
+    direction: rtl;
+}
+
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100vh;
+}
+
+/* الشريط الجانبي */
+.sidebar {
+    width: 25%;
+    background-color: #27296dd3;
+    padding: 20px;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0);
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* From Uiverse.io by satyamchaudharydev */ 
+/* this is a recreation of twitter search in css */
+.form {
+    --input-text-color: #fffefe;
+    --input-bg-color: #28354283;
+    --focus-input-bg-color: transparent;
+    --text-color: #F5C7F7;
+    --active-color: #767753;
+    --width-of-input: 300px;
+    --inline-padding-of-input: 1.2em;
+    --gap: 0.9rem;
+  }
+  /* form style */
+  .form {
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: var(--width-of-input);
+    position: relative;
+    isolation: isolate;
+  }
+  /* a fancy bg for showing background and border when focus. */
+  .fancy-bg {
+    position: absolute;
+    width: 100%;
+    inset: 0;
+    background: var(--input-bg-color);
+    border-radius: 30px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    box-shadow: rgba(0, 0, 0, 0) 0px 1px 4px;
+  }
+  /* label styling */
+  label {
+    width: 100%;
+    padding: 0.8em;
+    height: 40px;
+    padding-inline: var(--inline-padding-of-input);
+    display: flex;
+    align-items: center;
+  }
+  
+  .search,.close-btn {
+    position: absolute;
+  }
+  /* styling search-icon */
+  .search {
+    fill: var(--text-color);
+    left: var(--inline-padding-of-input);
+  }
+  /* svg -- size */
+  svg {
+    width: 17px;
+    display: block;
+  }
+  /* styling of close button */
+  .close-btn {
+    border: none;
+    right: var(--inline-padding-of-input);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e6d7d7;
+    padding: 0.1em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--active-color);
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* styling of input */
+  .input {
+    color: var(--input-text-color);
+    width: 100%;
+    margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
+    background: none;
+    border: none;
+  }
+  
+  .input:focus {
+    outline: none;
+  }
+  
+  .input::placeholder {
+    color: var(--text-color)
+  }
+  /* input background change in focus */
+  .input:focus ~ .fancy-bg {
+    border: 1px solid var(--active-color);
+    background: var(--focus-input-bg-color);
+  }
+  /* search icon color change in focus */
+  .input:focus ~ .search {
+    fill: var(--active-color);
+  }
+  /* showing close button when typing */
+  .input:valid ~ .close-btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  /* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+  }
+
+/* الشبكات الاجتماعية */
+ul {
+    list-style: none;
+  }
+  
+  .example-2 {
+    display: flex;
+    justify-content:left;
+    align-items:left;
+    flex-direction: column;
+  }
+  .example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
+    padding: 0.5rem;
+  }
+  
+  .example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  .example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+  }
+  .example-2 .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+  }
+  .example-2 .icon-content a:hover {
+    color: rgba(255, 255, 255, 0.459);
+  }
+  .example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+  .example-2 .icon-content a:hover .filled {
+    height: 100%;
+  }
+  
+  .example-2 .icon-content a[data-social="instagram"] .filled,
+  .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+    background: linear-gradient(
+      45deg,
+      #405de6,
+      #5b51db,
+      #b33ab4,
+      #c135b4,
+      #e1306c,
+      #fd1f1f
+    );
+  }
+  .example-2 .icon-content a[data-social="youtube"] .filled,
+  .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+    background-color: #ff0000;
+  }
+  
+
+.social-media p {
+    margin: 10px 0;
+}
+
+/* المحتوى الرئيسي */
+.content {
+    width: 80%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.gem {
+    background-color: #beadfac4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(15, 15, 15, 0);
+}
+
+.gem h1 {
+    font-size: 40px;
+    font-family:'Georgia', 'I distinguish no Romana', 'touch', 'exchange';
+    color: #FFF3DA;
+    text-align: center;
+}
+
+.gem img {
+    width: 50%;
+    height:fit-content;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.gem p {
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #153448;
+}
+
+.gem ol {
+  font-size: 22px;
+  font-family:'Times New Roman', Times, serif;
+  color: #000000;
+}
+
+.gem button {
+    padding: 15px;
+    background-color: #A393EB;
+    color: #eee7ee;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.gem button:hover {
+    background-color: #000000;
+}
+
+/* نصوص مخفية */
+.hidden {
+    display:none;
+}

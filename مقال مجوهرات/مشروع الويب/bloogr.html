@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأحجار الكريمة</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="gf.js" defer></script> <!-- إضافة JavaScript -->
+    <link rel="icon" href="icon.jpg">
+    <meta name="description" content="my blog  ">
+    <meta name="keywords" content="blog, bootstrap,php , html, css, JavaScript, php">
+    <meta name="author" content="mark sroijea">
+    <meta property="og:title"content="my blog">
+    <meta property="og:description" content="My blog with PHP and Bootstrap">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:title" content="My Blog">
+<meta property="twitter:description" content="My blog with PHP and Bootstrap">
+<meta property="twitter:image" content="">
+<meta property="twitter:url" content="">
+  </head>
+<body>
+  
+
+    <div class="container">
+        <!-- المحتوى الرئيسي -->
+        <main class="content">
+          <section class="gem" style="display: flex; align-items: center;">
+            <img src="Topaz.jpg" alt="Topaz Image" style="width: 200px; height: 200px; margin-left: 20px;">
+            <div>
+                <h1>Topaz</h1>
+                
+                <p id="topaz-text">Topaz is a precious stone composed of aluminum, silicon, oxygen, and fluorine. It comes in various colors, including golden to deep orange, yellow, yellowish-brown, pink, red, and various shades of blue. Sometimes it appears colorless. Topaz is considered a precious gem in jewelry. The hardness of topaz on the mineral scale is 8. Although topaz can scratch quartz, it cannot scratch ruby, which is only harder than diamond. See: hardness; ruby.</p>
+                <p class="more-text" id="topaz-more">Imperial topaz, with its golden-orange hue, is considered the most valuable type of topaz. On the other hand, colorless and light blue topaz are the most common and affordable varieties. The color intensity of topaz can be manipulated through various techniques, such as heat treatment and irradiation. For instance, certain types of brown topaz can be transformed into pink by heating. Similarly, pale blue topaz can be deepened to a rich blue by a combination of heat and irradiation.
+
+                  Topaz can be found in numerous regions worldwide, most notably in Brazil, Russia, Namibia, Nigeria, Pakistan, and Australia. Brazil produces the finest imperial topaz, and some topaz crystals weighing hundreds of kilograms have been discovered. Possessing large, high-quality topaz gemstones is a point of pride for many museums</p>
+                <button onclick="toggleText('topaz-more', this)">...more</button>
+                
+            </div>
+        </section>
+        
+        <section class="gem" style="display: flex; align-items: center;">
+          <img src="Diamonds.jpg" alt="Diamonds Image" style="width: 300px; height: 300px; margin-left: 20px;">
+          <div>
+              <h1>Diamonds</h1>
+              
+              <p id="Diamonds-text">Diamonds are characterized by their purity, beauty and sparkling color that steals hearts. They are considered one of the most beautiful and valuable gemstones.
+
+                Diamonds are characterized by their extreme hardness, which is estimated at ten degrees on the Mohs scale of hardness. This makes them one of the most precious stones that contain the strongest natural materials known on the surface of the earth without any competitor.
+                
+                There are also many types of diamonds, including:</p>
+              <ol class="more-text" id="Diamonds-more">
+                
+                <li>Diamond stone "Hope"</li>
+                <li>The Cullinan Diamond</li>
+                <li>Wittelsbach-Graff Diamond</li>
+
+                <p style="font-size: 23px;">:Diamond also has many benefits, including the following</p>
+
+                <li>It helps in breaking up urinary tract stones.</li>
+                <li>It is used scientifically to treat health problems and diseases by strengthening the immune system and increasing the body's activity.</li>
+                <li>With its wonderful shape and shine, it helps solve problems of mood swings and psychological illnesses.</li>
+              </ol>
+
+              <button onclick="toggleText('Diamonds-more', this)">...more</button>
+              
+          </div>
+      </section>
+        
+      <section class="gem" style="display: flex; align-items: center;">
+        <img src="Emerald.jpg" alt="Emerald Image" style="width: 200px; height: 200px; margin-left: 20px;">
+        <div>
+            <h1>Emerald</h1>
+            
+            <p id="Emerald-text">Emerald belongs to the group of precious stones due to its extreme hardness, but not more than the hardness of ruby.
+
+              Emerald is characterized by having graded shades of green grass and secondary colors blue and yellow. The reason for the appearance of this wonderful color is that it contains a high percentage of chromium, and therefore if the emerald is exposed to a high temperature, it loses its color.
+              There are also many types of emerald, which are:</p>
+            <ol class="more-text" id="Emerald-more">
+              <li>Deep green fly emerald.</li>
+              <li>Emerald basil, its color is similar to the colors of basil.</li>
+              <li>The emerald is of a soft charcoal color.</li>
+              <li>Soap emerald is the color of green soap.</li>
+              <li>Sea emerald.</li>
+              <li>Golden emerald.</li>
+              <li>Pink emerald.</li>
+              <li>Emerald color.</li>
+              
+            </ol>
+            <button onclick="toggleText('Emerald-more', this)">...more</button>
+            
+        </div>
+    </section>
+
+
+    <section class="gem" style="display: flex; align-items: center;">
+            <img src="Zircon.jpg" alt="zircon Image" style="width: 160px; height: 160px; margin-left: 20px;">
+            <div>
+                <h1>zircon</h1>
+                
+                <p id="zircon-text">Zircon is a sub-mineral found all over the world and is very small and very flexible as it can survive in rocks, soil and sediments for billions of years, it is extracted through dry mining methods and wet mining methods.
+                  Its colors vary as there is white zircon, blue zircon, red zircon, gray and yellow.
+                  It is classified into three varieties that differ from each other in weight, hardness, optical properties and type, which are:</p>
+                <ol class="more-text" id="zircon-more">
+                  <li>High Zircon.</li>
+                  <li>Medium zircon.</li>
+                  <li>Low zircon.</li>
+                </ol>
+                <button onclick="toggleText('zircon-more', this)">...more</button>
+                
+            </div>
+        </section>
+        </main>
+
+      <script>
+            // دالة لإظهار وإخفاء النص عند الضغط على الزر
+            function toggleText(elementId, button) {
+                const moreText = document.getElementById(elementId);
+                
+                if (moreText.style.display === "none") {
+                    moreText.style.display = "block";  // إظهار النص
+                    button.innerText = "...less";      // تغيير نص الزر إلى "less..."
+                } else {
+                    moreText.style.display = "none";   // إخفاء النص
+                    button.innerText = "...more";      // إعادة النص إلى "more..."
+                }
+            }
+    
+            // تأكد من أن النص الإضافي مخفي عند تحميل الصفحة
+            document.addEventListener("DOMContentLoaded", function() {
+                const moreTexts = document.querySelectorAll(".more-text");
+                moreTexts.forEach(function(text) {
+                    text.style.display = "none";
+                });
+            });
+
+           
+    
+        </script>
+
+        <!-- الشريط الجانبي -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="قط.png" alt="User" class="profile-img">
+                <h3>user</h3>
+            </div>
+            
+           
+            <form class="form">
+                <label for="search">
+                    <input class="input" type="text" required="getElementById" placeholder="Search twitter" id="search">
+                    <div class="fancy-bg"></div>
+                    <div class="search">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="r-14j79pv r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-4wgw6l r-f727ji r-bnwqim r-1plcrui r-lrvibr">
+                            <g>
+                                <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+                            </g>
+                        </svg>
+                    </div>
+
+                    
+                 
+                    
+                    <button class="close-btn" type="reset">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </label>
+            </form>
+
+            
+            <ul class="example-2">
+                  
+                <li class="icon-content">
+                  <a
+                    href="https://www.instagram.com/some_diamonds_reserve/"
+                    aria-label="Instagram"
+                    data-social="instagram"
+                  >
+                    <div class="filled"></div>
+                    <svg
+                      xmlns="https://www.instagram.com/some_diamonds_reserve/"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-instagram"
+                      viewBox="0 0 16 16"
+                      xml:space="preserve"
+                    >
+                      <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+                <li class="icon-content">
+                  <a href="https://www.youtube.com/watch?v=RcZATf3Lmb0" aria-label="Youtube" data-social="youtube">
+                    <div class="filled"></div>
+                    <svg
+                      xmlns="https://www.youtube.com/watch?v=RcZATf3Lmb0"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-youtube"
+                      viewBox="0 0 16 16"
+                      xml:space="preserve"
+                    >
+                      <path
+                        d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </a>
+                 
+                </li>
+              </ul>
+              
+        </aside>
+    </div>
+    
+    
+</body>
+</html>

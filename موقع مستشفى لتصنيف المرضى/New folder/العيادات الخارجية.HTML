@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Outpatient clinics</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="doctor.html">Home</a>
+        <a href="العيادات الخارجية.HTML">Outpatient clinics</a>
+        <a href="العيادات الداخليه.html">Inpatient clinics</a>
+    </div>
+
+    <!-- Add Patient Form -->
+    <form onsubmit="event.preventDefault(); system.addPatient();">
+      <label for="section-select">Select Section:</label>
+      <select id="section-select">
+          <option value="Ophthalmology">Ophthalmology</option>
+          <option value="FamilyMedicine">Family Medicine</option>
+          <option value="Dentistry">Dentistry</option>
+          <option value="ENT">ENT</option>
+          <option value="InternalMedicine">Internal Medicine</option>
+      </select>
+      <label for="patient-name">Patient Name:</label>
+      <input type="text" id="patient-name">
+      <button type="submit">Add Patient</button>
+    </form>
+
+    <h3>Patient List</h3>
+    <table id="patient-table">
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Doctor</th>
+          <th>Patient</th>
+          <th>Type</th>
+          <th>Nurse</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      class Section {
+        constructor(name, type, doctors) {
+          this.name = name;
+          this.type = type; // Internal or External
+          this.doctors = doctors;
+          this.nurses = { // Assign a nurse for each doctor
+            "Dr. Reem Abdel Rahman": "Emily",
+            "Dr. Khaled Ismail": "Emma",
+            "Dr. Fayez Abdullah": "Lily",
+            "Dr. Lina Sami": "Chloe",
+            "Dr. Youssef Mamdouh": "Sarah"
+          };
+          this.patients = [];
+        }
+
+        addPatient(patientName, doctorName) {
+          const nurseName = this.nurses[doctorName] || "N/A"; // Assign a nurse
+          this.patients.push({ patientName, doctorName, nurseName });
+        }
+      }
+
+      class HospitalSystem {
+        constructor() {
+          this.sections = this.initializeSections();
+          this.loadFromLocalStorage();
+          this.updatePatientTable();
+        }
+
+        initializeSections() {
+          return {
+            Ophthalmology: new Section("Ophthalmology", "External", ["Dr. Reem Abdel Rahman"]),
+            FamilyMedicine: new Section("Family Medicine", "External", ["Dr. Khaled Ismail"]),
+            Dentistry: new Section("Dentistry", "External", ["Dr. Fayez Abdullah"]),
+            ENT: new Section("ENT", "External", ["Dr. Lina Sami"]),
+            InternalMedicine: new Section("Internal Medicine", "External", ["Dr. Youssef Mamdouh"]),
+          };
+        }
+
+        saveToLocalStorage() {
+          const data = Object.fromEntries(
+            Object.entries(this.sections).map(([key, section]) => [
+              key,
+              {
+                name: section.name,
+                type: section.type,
+                doctors: section.doctors,
+                nurses: section.nurses,
+                patients: section.patients
+              }
+            ])
+          );
+          localStorage.setItem("sections", JSON.stringify(data));
+        }
+
+        loadFromLocalStorage() {
+          const data = localStorage.getItem("sections");
+          if (data) {
+            const parsedData = JSON.parse(data);
+            this.sections = Object.fromEntries(
+              Object.entries(parsedData).map(([key, sectionData]) => [
+                key,
+                new Section(sectionData.name, sectionData.type, sectionData.doctors)
+              ])
+            );
+
+            // Reassign patients to sections
+            for (const [key, sectionData] of Object.entries(parsedData)) {
+              sectionData.patients.forEach(patient =>
+                this.sections[key].addPatient(patient.patientName, patient.doctorName)
+              );
+            }
+          }
+        }
+
+        addPatient() {
+          const sectionKey = document.getElementById("section-select").value;
+          const patientName = document.getElementById("patient-name").value;
+          if (!patientName.trim()) {
+            alert("Please enter the patient's name");
+            return;
+          }
+
+          const section = this.sections[sectionKey];
+          const doctorName = this.assignDoctor(section);
+
+          section.addPatient(patientName, doctorName);
+          this.saveToLocalStorage();
+          this.updatePatientTable();
+          document.getElementById("patient-name").value = "";
+        }
+
+        assignDoctor(section) {
+          const randomIndex = Math.floor(Math.random() * section.doctors.length);
+          return section.doctors[randomIndex];
+        }
+
+        updatePatientTable() {
+          const tableBody = document.querySelector("#patient-table tbody");
+          tableBody.innerHTML = ""; // Clear previous table rows
+          Object.values(this.sections).forEach(section => {
+            section.patients.forEach(patient => {
+              const row = `
+                <tr>
+                  <td>${section.name}</td>
+                  <td>${patient.doctorName}</td>
+                  <td>${patient.patientName}</td>
+                  <td>${section.type}</td>
+                  <td>${patient.nurseName}</td>
+                </tr>`;
+              tableBody.innerHTML += row;
+            });
+          });
+        }
+      }
+
+      const system = new HospitalSystem();
+    </script>
+</body>
+</html>

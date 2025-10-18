@@ -1,0 +1,204 @@
+
+body {
+    direction: ltr;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    height: 100vh;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #d3e9ff;
+    padding: 20px 0; /* التحكم في ارتفاع الشريط */
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    padding: 15px;
+    position: relative;
+    
+    margin: 0 120px; /* مسافة بين النصوص */
+    padding: 20px; /* مسافة داخلية */
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #007BFF;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* تعديل لمحاذاة المحتوى في الأعلى */
+    background-color: #ddd;
+    width: 100%;
+    height: calc(100vh - 50px); /* يشمل المساحة باستثناء شريط التنقل */
+    box-sizing: border-box;
+    padding-top: 30px; /* يمكنك التحكم في المسافة من الأعلى */
+}
+
+.content h1 {
+    font-size: 40px;
+    margin-bottom: 60px; /* تقليل المسافة بين العنوان وأعلى الصفحة */
+}
+
+.doctors-container {
+    display: flex;
+    justify-content: center;
+    gap: 90px; /* تقليل المسافة بين الكروت */
+    flex-wrap: wrap;
+    margin-top: 30px; /* تحريك الحاوية للأعلى */
+}
+
+.doctor-card {
+    text-align: center;
+}
+
+.doctor-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 6px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px; /* تقليل المسافة بين الصورة والنص */
+}
+
+.doctor-card img:hover {
+    transform: scale(1.1); /* تكبير الصورة عند التمرير */
+}
+
+.doctor-card p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 10px; /* تقليل المسافة بين النصوص */
+    
+}
+
+.doctor-card span {
+    display: block;
+    font-size: 20px;
+    color: #777;
+    margin-top: 5px;
+}
+
+
+/* تنسيق الحاوية الرئيسية للنموذج */
+form {
+    display: flex;
+    justify-content: flex-start; /* العناصر تبدأ من اليسار */
+    align-items: center; /* محاذاة عمودية صحيحة */
+    gap: 40px; /* زيادة المسافة بين الحقول */
+    margin-bottom: 20px; /* مسافة تحت النموذج */
+}
+
+form label {
+    margin-right: 5px; /* مسافة صغيرة بين النصوص والحقول */
+}
+
+form select,
+form input {
+    padding: 10px; /* توسعة حجم الحقول */
+    font-size: 16px; /* تكبير النصوص داخل الحقول */
+    border: 1px solid #ccc; /* إضافة حدود خفيفة */
+    border-radius: 4px; /* زوايا مستديرة */
+    flex: 1; /* السماح للعناصر بالتمدد تلقائيًا */
+    max-width: 250px; /* تحديد أقصى عرض للصندوق */
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px; /* مساحة أكبر للزر */
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-shrink: 0; /* منع الزر من التمدد */
+}
+
+form button:hover {
+    background-color: #218838; /* لون أغمق عند التمرير */
+}
+
+/* تنسيق الجدول */
+#patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* تنسيق رأس الجدول */
+#patient-table thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#patient-table th {
+    padding: 10px;
+    text-align: left;
+}
+
+/* تنسيق خلايا الجدول */
+#patient-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* تنسيق عند المرور على الصفوف */
+#patient-table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* تنسيق الأزرار */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* تنسيق حقل الإدخال */
+input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    width: 200px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
