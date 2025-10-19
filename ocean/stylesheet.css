@@ -1,0 +1,6 @@
+body {
+    background-image: url('1.png');
+    background-size: cover;       /* تخلي الصورة تغطي الصفحة كلها */
+    background-repeat: no-repeat; /* تمنع تكرار الصورة */
+    background-position: center;  /* تخليها بالمنتصف */
+}
