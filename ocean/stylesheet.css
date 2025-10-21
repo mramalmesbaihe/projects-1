@@ -1,6 +1,36 @@
 body {
+    margin: 0;
+    height: 100vh;
     background-image: url('1.png');
-    background-size: cover;       /* تخلي الصورة تغطي الصفحة كلها */
-    background-repeat: no-repeat; /* تمنع تكرار الصورة */
-    background-position: center;  /* تخليها بالمنتصف */
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    position: absolute;
+    bottom: 220px;  
+    left: 55%;
+    transform: translateX(-50%);
+    font-family: 'Pacifico', cursive;
+    font-weight: bold;
+    font-size: 50px;
+    color: #517eb9;
+    text-align: center;
+    animation: wave 4s ease-in-out infinite;
+}
+
+
+@keyframes wave {
+    0%, 100% {
+        transform: translate(-50%, 0px);
+    }
+    25% {
+        transform: translate(-50%, -10px);
+    }
+    50% {
+        transform: translate(-50%, 5px);
+    }
+    75% {
+        transform: translate(-50%, -5px);
+    }
 }
