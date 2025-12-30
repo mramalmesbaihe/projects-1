@@ -1,5 +1,5 @@
-num1 = float(input( "Enter the first number: "))
-num2 = float(input("enter the second number: "))
+num1 =(input( "Enter the first number: "))
+num2 =(input("enter the second number: "))
 
 operation = input("Select the operation(+ - * /): ")
 
